@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>অন্নমিত্র</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/f034815afd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@600&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+      .bn {
+        font-family: 'Noto Sans Bengali', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 max-w-[1440px] mx-auto leading-relaxed">
+    
+    <!-- Header -->
+    <header class="h-screen flex flex-col justify-center items-center text-center text-white px-8 relative">
+      
+      
+      <div class="absolute inset-0 bg-gradient-to-b from-[#2d6a4f] to-[#ffd166] md:hidden"></div>
+      
+      
+      <div class="absolute inset-0 bg-black/50 md:block hidden" 
+           style="background-image: url('front.jpg'); background-size: cover; background-position: center;"></div>
+      
+      
+      <div class="relative z-10">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-wide text-[#ffd166] drop-shadow-lg bn">
+          অন্নমিত্র
+        </h1>
+        <p class="text-lg md:text-2xl mb-4 max-w-2xl">
+          Food gives life, friendship gives hope.
+        </p>
+        <p class="text-lg md:text-2xl mb-6 max-w-2xl">
+          In <span class="bn">অন্নমিত্র</span>, everyone finds love. 💚
+        </p>
+        <div class="flex gap-4 flex-wrap justify-center mt-4">
+          <button class="px-6 py-3 rounded-lg font-semibold bg-[#ffd166] text-[#2d6a4f] hover:bg-[#ffb703] transition">
+            Sign Up - Donor
+          </button>
+          <button class="px-6 py-3 rounded-lg font-semibold bg-[#ffd166] text-[#2d6a4f] hover:bg-[#ffb703] transition">
+            Sign Up - NGO
+          </button>
+          <button class="px-6 py-3 rounded-lg font-semibold border-2 border-[#ffd166] text-[#ffd166] hover:bg-[#ffd166] hover:text-[#2d6a4f] transition">
+            Log In
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cards -->
+    <main class="relative -mt-20 flex flex-wrap justify-center gap-6 px-6">
+      <div class="flex-1 min-w-[250px] bg-white/90 backdrop-blur-md rounded-xl p-6 text-center text-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition">
+        <span class="block text-3xl font-bold text-[#2d6a4f]">12,540</span>
+        Meals Saved
+      </div>
+      <div class="flex-1 min-w-[250px] bg-white/90 backdrop-blur-md rounded-xl p-6 text-center text-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition">
+        <span class="block text-3xl font-bold text-[#2d6a4f]">142</span>
+        NGOs
+      </div>
+      <div class="flex-1 min-w-[250px] bg-white/90 backdrop-blur-md rounded-xl p-6 text-center text-lg shadow-lg hover:shadow-2xl hover:-translate-y-2 transition">
+        <span class="block text-3xl font-bold text-[#2d6a4f]">21</span>
+        Cities Covered
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#2d6a4f] text-white mt-16 px-10 py-10 rounded-t-2xl">
+      <div class="flex flex-wrap justify-between gap-10">
+        <div>
+          <h3 class="text-[#ffd166] text-lg font-semibold mb-2">
+            About <span class="bn">অন্নমিত্র</span>
+          </h3>
+          <p class="text-sm">প্লেট হোক পূর্ণ, হৃদয় হোক তৃপ্ত</p>
+        </div>
+        <div class="text-sm space-y-1">
+          <p>📍 Chattogram, Bangladesh</p>
+          <p>📞 +880-123-456789</p>
+          <p>✉ annomitra.bd@gmail.com</p>
+        </div>
+        <div>
+          <p class="mb-2">Follow us</p>
+          <div class="flex gap-4 text-xl">
+            <i class="fa-brands fa-twitter hover:text-[#ffd166] hover:scale-125 transition"></i>
+            <i class="fa-brands fa-facebook hover:text-[#ffd166] hover:scale-125 transition"></i>
+            <i class="fa-brands fa-instagram hover:text-[#ffd166] hover:scale-125 transition"></i>
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-6 text-sm text-gray-300">
+        © 2025 অন্নমিত্র. All rights reserved.
+      </p>
+    </footer>
+
+  </body>
+</html>

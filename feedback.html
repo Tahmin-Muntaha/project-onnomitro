@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অন্নমিত্র - Feedback</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    h1, .bn { font-family: 'Noto Sans Bengali', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-green-50 p-6">
+
+  <div class="grid md:grid-cols-2 w-[96%] max-w-5xl rounded-2xl shadow-2xl overflow-hidden bg-white">
+
+    <!-- Left Image -->
+    <aside class="hidden md:block bg-cover bg-center"
+           style="background-image:url('Feedback.jpg');">
+    </aside>
+
+    <!-- Feedback Form -->
+    <section class="p-8 md:p-12 flex flex-col justify-center bg-white">
+      <h1 class="text-3xl font-bold text-green-700 text-center mb-1 bn">অন্নমিত্র</h1>
+      <p class="text-center text-gray-600 mb-6">Your feedback helps us grow stronger 🌱</p>
+
+      <form class="space-y-5">
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Name</label>
+          <input type="text" placeholder="Enter your name" required
+                 class="w-full px-4 py-3 rounded-lg border border-green-200 bg-green-50 focus:border-green-500 focus:ring-2 focus:ring-green-300 outline-none">
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Select Role</label>
+          <select required
+                  class="w-full px-4 py-3 rounded-lg border border-green-200 bg-green-50 focus:border-green-500 focus:ring-2 focus:ring-green-300 outline-none">
+            <option value="">Select</option>
+            <option value="ngo">NGO</option>
+            <option value="donor">Donor</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">E-mail</label>
+          <input type="email" placeholder="Enter your email" required
+                 class="w-full px-4 py-3 rounded-lg border border-green-200 bg-green-50 focus:border-green-500 focus:ring-2 focus:ring-green-300 outline-none"/>
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Description</label>
+          <textarea placeholder="Write your feedback here..." rows="4" required
+                    class="w-full px-4 py-3 rounded-lg border border-green-200 bg-green-50 focus:border-green-500 focus:ring-2 focus:ring-green-300 outline-none resize-none"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700">Ratings (1-5)</label>
+          <input type="number" min="1" max="5" placeholder="Rate us" required
+                 class="w-full px-4 py-3 rounded-lg border border-green-200 bg-green-50 focus:border-green-500 focus:ring-2 focus:ring-green-300 outline-none"/>
+        </div>
+
+        <button type="submit"
+                class="w-full py-3 bg-gradient-to-r from-green-700 to-green-500 text-white font-bold rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-0.5">
+          Submit
+        </button>
+
+      </form>
+    </section>
+
+  </div>
+
+</body>
+</html>
