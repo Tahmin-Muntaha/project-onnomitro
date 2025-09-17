@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>অন্নমিত্র - NGO Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    h1 { font-family: 'Noto Sans Bengali', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-50 min-h-screen">
+
+  <div class="max-w-6xl mx-auto p-6">
+
+    <!-- Topbar -->
+    <header class="flex items-center justify-between mb-6 p-4 rounded-2xl bg-white/90 shadow-lg backdrop-blur-sm">
+      <div>
+        <h1 class="text-2xl text-green-700 font-bold" lang="bn">অন্নমিত্র</h1>
+        <p class="text-sm text-green-600">Connecting surplus food to people who need it</p>
+      </div>
+      <nav class="flex gap-3">
+        <a href="ngo_profile.html" class="px-5 py-2 rounded-full border-2 border-green-700 text-green-700 font-semibold hover:bg-green-50">Profile</a>
+        <button id="logoutBtn" class="px-5 py-2 rounded-full bg-green-700 text-white font-semibold shadow-md hover:bg-green-800">Logout</button>
+      </nav>
+    </header>
+
+    <!-- Welcome -->
+    <div class="text-green-700 font-semibold text-xl mb-5">
+      Welcome back, <strong>ABC NGO</strong> 🌿
+    </div>
+
+    <!-- Controls -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <label for="area" class="font-semibold text-green-700">Filter by Area:</label>
+      <select id="area" class="px-4 py-2 rounded-full border border-green-200 bg-white shadow-sm focus:ring-2 focus:ring-green-500">
+        <option value="">All</option>
+        <option value="Muradpur">Muradpur</option>
+        <option value="Panchlaish">Panchlaish</option>
+        <option value="Agrabad">Agrabad</option>
+        <option value="Halishahar">Halishahar</option>
+        <option value="Jamalkhan">Jamalkhan</option>
+      </select>
+    </div>
+
+    <!-- Donations -->
+    <section id="donationRow" class="flex flex-wrap gap-5">
+
+      <!-- Card 1 -->
+      <article data-area="Muradpur"
+        class="flex flex-1 min-w-[280px] max-w-sm gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="flex-1 flex flex-col gap-1">
+          <div class="text-green-700 font-bold text-lg">Veg Rice</div>
+          <div class="text-gray-600">Quantity: <span class="font-semibold text-green-700">50 boxes</span></div>
+          <div class="text-gray-600">Location: Muradpur</div>
+        </div>
+        <div class="flex items-center">
+          <button data-id="1" type="button"
+            class="btn-accept px-4 py-2 rounded-full bg-green-700 text-white font-semibold hover:bg-green-800 shadow">
+            Accept
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article data-area="Panchlaish"
+        class="flex flex-1 min-w-[280px] max-w-sm gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="flex-1 flex flex-col gap-1">
+          <div class="text-green-700 font-bold text-lg">Chicken Curry</div>
+          <div class="text-gray-600">Quantity: <span class="font-semibold text-green-700">40 plates</span></div>
+          <div class="text-gray-600">Location: Panchlaish</div>
+        </div>
+        <div class="flex items-center">
+          <button data-id="2" type="button"
+            class="btn-accept px-4 py-2 rounded-full bg-green-700 text-white font-semibold hover:bg-green-800 shadow">
+            Accept
+          </button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article data-area="Jamalkhan"
+        class="flex flex-1 min-w-[280px] max-w-sm gap-4 p-5 bg-white rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-1 transition">
+        <div class="flex-1 flex flex-col gap-1">
+          <div class="text-green-700 font-bold text-lg">Mixed Vegetables</div>
+          <div class="text-gray-600">Quantity: <span class="font-semibold text-green-700">30 packets</span></div>
+          <div class="text-gray-600">Location: Jamalkhan</div>
+        </div>
+        <div class="flex items-center">
+          <button data-id="3" type="button"
+            class="btn-accept px-4 py-2 rounded-full bg-green-700 text-white font-semibold hover:bg-green-800 shadow">
+            Accept
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <p class="mt-8 text-center text-sm text-green-700">
+      🌱 Tip: Click <strong>Profile</strong> to update NGO details. Accept a donation to assign it to your NGO.
+    </p>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="popup" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-2xl shadow-lg text-center max-w-sm">
+      <h2 class="text-green-700 font-bold text-xl mb-3">🎉 Food Accepted!</h2>
+      <p class="text-gray-700 mb-4">Thank you for accepting this donation. Together, we’re reducing food waste 🌱</p>
+      <button id="popupClose" type="button"
+        class="px-5 py-2 rounded-lg bg-green-700 text-white font-semibold hover:bg-green-800">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const popup = document.getElementById('popup');
+      const popupClose = document.getElementById('popupClose');
+      const logoutBtn = document.getElementById('logoutBtn');
+
+      const setPopupVisible = (visible) => {
+        popup.classList.toggle('hidden', !visible);
+        document.body.style.overflow = visible ? 'hidden' : 'auto';
+        if (visible) popupClose.focus();
+      };
+
+      document.querySelectorAll('.btn-accept').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.disabled) return;
+          btn.disabled = true;
+          btn.classList.remove('bg-green-700', 'hover:bg-green-800', 'text-white', 'shadow');
+          btn.classList.add('bg-green-200', 'text-green-800', 'cursor-default');
+          btn.textContent = 'Accepted';
+          setPopupVisible(true);
+        });
+      });
+
+      popupClose.addEventListener('click', () => setPopupVisible(false));
+      popup.addEventListener('click', (e) => { if (e.target === popup) setPopupVisible(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setPopupVisible(false); });
+
+      const areaSelect = document.getElementById('area');
+      areaSelect.addEventListener('change', (e) => {
+        const area = e.target.value;
+        document.querySelectorAll('#donationRow article').forEach(card => {
+          card.style.display = (!area || card.dataset.area === area) ? 'flex' : 'none';
+        });
+      });
+
+      // --- FRONTEND LOGOUT ---
+      logoutBtn.addEventListener('click', () => {
+        // Clear any stored data (if you use localStorage/sessionStorage)
+        localStorage.clear();
+        sessionStorage.clear();
+        // Redirect to login page
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
+</body>
+</html>
